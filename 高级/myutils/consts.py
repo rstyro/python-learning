@@ -1,0 +1,3 @@
+# 常量
+NAME='rstyro'
+MONEY=10000000
