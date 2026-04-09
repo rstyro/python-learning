@@ -24,7 +24,8 @@ print(f"最后一个元素: {test_list[-1]}")
 # 切片
 print(f"索引1-3: {test_list[1:4]}")
 print(f"步长为2: {test_list[::2]}")
-print(f"反转列表: {test_list[::-1]}\n")
+print(f"反转列表: {test_list[::-1]}")
+print(f"整个列表的副本: {test_list[:]}\n")
 
 # 3. 列表元素修改
 print("3. 修改列表元素")
@@ -98,7 +99,7 @@ print(f"拷贝后修改的列表: {new_list1}\n")
 print("8. 列表遍历")
 for i in [1,2,3]:
     print(f"遍历元素: {i}")
-# 带索引遍历
+# 带索引遍历,Python内置的 enumerate 函数可以把一个 list 变成索引-元素对
 for idx, val in enumerate(['a','b','c']):
     print(f"索引{idx}: {val}")
 print()

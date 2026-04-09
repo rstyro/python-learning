@@ -102,6 +102,11 @@ new_list: list[int] = [1, 2, 3]
 new_dict: dict[str, float] = {"a": 1.1, "b": 2.2}
 
 
+# 14.自定义类型别名
+UserId = int
+def get_user(uid: UserId) -> dict:
+    return {"id": uid, "name": "test"}
+
 # ------------------- 测试 -------------------
 if __name__ == '__main__':
     print(add(10, 20))
@@ -119,3 +124,5 @@ if __name__ == '__main__':
     print(int_box.get())
 
     print_items([1, 2, 3])
+
+    print(get_user(110))
