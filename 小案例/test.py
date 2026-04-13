@@ -1,13 +1,26 @@
-# 函数文档字符串（docstring）的查看：
-def add(x, y):
-    """返回 x 和 y 的和"""
-    return x + y
-print(add.__doc__)     # 或 help(add)
+lit=[1, 2, 2, 3, 4, 4, 5]
+new_lst=[]
 
-# 闭包（closure）：内部函数引用外部函数的变量
-def outer(x):
-    def inner(y):
-        return x + y
-    return inner
-add5 = outer(5)
-print(add5(3))
+for i in lit:
+    if i not in new_lst:
+        new_lst.append(i)
+
+print("新数组：",new_lst)
+
+
+def find_max_min():
+    min_num=max_num=None
+    lst=[]
+    for i in range(0,5):
+        num = float(input("请输入数字："))
+        if i==0:
+            min_num=max_num=num
+        lst.append(num)
+        if num>max_num:
+            max_num=num
+        if num<min_num:
+            min_num=num
+    print("数组为：",lst)
+    print(f"最大值为:{max_num},最小值为：{min_num}")
+
+find_max_min()
