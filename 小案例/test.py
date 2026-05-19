@@ -1,26 +1,23 @@
-lit=[1, 2, 2, 3, 4, 4, 5]
-new_lst=[]
+import os
+from tqdm import tqdm
 
-for i in lit:
-    if i not in new_lst:
-        new_lst.append(i)
+# 定义文件夹名称和对应的文件数量
+configs = [
+    ("test3000", 3000),
+    ("test1w", 10000),
+]
 
-print("新数组：",new_lst)
+print("开始生成文件...")
+for folder_name, file_count in configs:
+    # 创建文件夹
+    os.makedirs(folder_name, exist_ok=True)
 
+    # 使用 tqdm 显示当前文件夹的进度条
+    with tqdm(total=file_count, desc=f"正在生成 {folder_name}", unit="file") as pbar:
+        for i in range(1, file_count + 1):
+            file_path = os.path.join(folder_name, f"test{i}.txt")
+            with open(file_path, "w", encoding="utf-8") as f:
+                f.write(str(i))
+            pbar.update(1)  # 每生成一个文件，进度条+1
 
-def find_max_min():
-    min_num=max_num=None
-    lst=[]
-    for i in range(0,5):
-        num = float(input("请输入数字："))
-        if i==0:
-            min_num=max_num=num
-        lst.append(num)
-        if num>max_num:
-            max_num=num
-        if num<min_num:
-            min_num=num
-    print("数组为：",lst)
-    print(f"最大值为:{max_num},最小值为：{min_num}")
-
-find_max_min()
+print("所有文件生成完毕！")

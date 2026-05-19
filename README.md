@@ -2,6 +2,40 @@
 - Python 入门学习笔记 & 代码 Demo，适合零基础快速上手
 
 
+## 包管理与虚拟环境
+- 创建项目首先需要安装依赖
+- 虚拟环境 = 隔离的工作空间,所以一般都是先创建虚拟环境再安装依赖。建议一个项目一个虚拟环境防止依赖冲突
+
+### 常用命令
+
+```bash
+# 创建虚拟环境，命名为 .venv（大多数IDE默认都是.venv,这个命名自定义的，什么都可以）
+python -m venv .venv
+
+# 激活环境（Windows）
+.venv\Scripts\activate
+
+# 激活环境（macOS/Linux）
+source .venv/bin/activate
+
+# 安装依赖 -r 递归
+pip install -r requirements.txt
+
+# 导出当前环境依赖
+pip freeze > requirements.txt
+```
+
+### requirements.txt 格式
+
+```bash
+# ~= 兼容版本运算符：相当于 >=2.33.1, ==2.33.*
+requests ~= 2.33.1
+
+# 固定精确版本
+PyMySQL == 1.1.2
+```
+
+
 ## 一、基本语法
 
 ### 1、HelloWorld
@@ -1725,34 +1759,4 @@ Python 提供了大量内置函数，无需导入即可使用，常用如下：
 
 
 
-## 六、包管理与虚拟环境
 
-### requirements.txt 格式
-
-```bash
-# ~= 兼容版本运算符：相当于 >=2.33.1, ==2.33.*
-requests ~= 2.33.1
-
-# 固定精确版本
-PyMySQL == 1.1.2
-```
-
-
-
-### 常用命令
-
-```bash
-# 创建虚拟环境
-python -m venv myenv
-
-# 激活环境（Windows）
-myenv\Scripts\activate
-# 激活环境（macOS/Linux）
-source myenv/bin/activate
-
-# 安装依赖
-pip install -r requirements.txt
-
-# 导出当前环境依赖
-pip freeze > requirements.txt
-```
