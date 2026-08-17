@@ -16,6 +16,7 @@ print(f"数字列表: {num_list}\n")
 
 # 2. 列表索引与切片
 test_list = [10, 20, 30, 40, 50]
+print("111====",test_list[:1])
 print("2. 列表索引与切片")
 # 正索引
 print(f"第一个元素: {test_list[0]}")

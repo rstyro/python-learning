@@ -18,6 +18,9 @@ python -m venv .venv
 # 激活环境（macOS/Linux）
 source .venv/bin/activate
 
+# 设置utf8环境变量，防止requirements.txt有中文注释编码问题
+$env:PYTHONUTF8=1
+
 # 安装依赖 -r 递归
 pip install -r requirements.txt
 
